@@ -9,7 +9,7 @@ const MainScreen = (props: any) => {
         <View style={styles.container}>
             <Text style={styles.title}>{'Choose a Lottie File'}</Text>
             <TouchableOpacity style={styles.button} onPress={onButtonPress} activeOpacity={0.8}>
-                <Text style={styles.buttonText}>{'Click me'}</Text>
+                <Text style={styles.buttonText}>{'Choose Now'}</Text>
             </TouchableOpacity>
             {selectedFile && (
                 <LottieView 
