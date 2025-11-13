@@ -25,7 +25,6 @@ const MainContainer = () => {
                             const tempPath = `${RNFS.CachesDirectoryPath}/${fileName}`;
                             await RNFS.copyFile(fileUri, tempPath);
                             fileUri = `file://${tempPath}`;
-                            console.log('Copied file to:', fileUri);
                         } catch (copyError: any) {
                             console.error('Error copying file:', copyError);
                             Alert.alert('Error', 'Failed to access file. Please try again.');
@@ -40,10 +39,7 @@ const MainContainer = () => {
             }
         } catch (err: any) {
             if (err.isCancel) {
-                console.log('User cancelled file picker');
-            } else {
                 Alert.alert('Error', 'Failed to pick file: ' + err.message);
-                console.error('Error picking file:', err);
             }
         }
     }
